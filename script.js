@@ -21,7 +21,8 @@ function beginStory(){initAudio();messageSound();go(1)}
 function go(index){
   if(index<0||index>=scenes.length)return;
   const video=scenes[current].querySelector('video');if(video&&!video.paused)video.pause();
-  scenes[current].classList.remove('active');current=index;scenes[current].classList.add('active');scenes[current].scrollTop=0;
+  scenes[current].classList.remove('active');current=index;scenes[current].classList.add('active');
+  window.scrollTo({top:0,left:0,behavior:'auto'});document.documentElement.scrollTop=0;document.body.scrollTop=0;
   steps.forEach((s,i)=>s.classList.toggle('on',i===Math.min(index,steps.length-1)));
   document.getElementById('chapterName').textContent=scenes[current].dataset.name;
   if(index===2)startTyping();if(index===5)updateCountdown();
@@ -42,7 +43,7 @@ const routeCopies=[
 ];
 function routeStory(i,el){document.querySelectorAll('.stop').forEach(x=>x.classList.remove('on'));el.classList.add('on');const box=document.getElementById('routeStory');box.style.opacity=0;setTimeout(()=>{box.textContent=routeCopies[i];box.style.opacity=1},180);note(520+i*100,.18,0,.02)}
 function revealPromise(el){el.classList.toggle('open');note(620+Math.random()*200,.14,0,.018)}
-function openLetter(){softChime();document.getElementById('letterIntro').style.display='none';document.getElementById('letterPane').classList.add('show')}
+function openLetter(){softChime();document.getElementById('letterIntro').style.display='none';document.getElementById('letterPane').classList.add('show');window.scrollTo({top:0,left:0,behavior:'smooth'})}
 function receiveLetter(){confetti();softChime();setTimeout(()=>go(8),450)}
 function updateCountdown(){
   const target=new Date('2026-08-14T00:00:00+08:00').getTime();let diff=Math.max(0,target-Date.now());
