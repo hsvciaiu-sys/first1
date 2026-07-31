@@ -26,7 +26,6 @@ assets = {
     "book": data_uri("assets/book.webp.b64", "image/webp"),
     "auditorium_close": data_uri("assets/auditorium-close.webp.b64", "image/webp"),
     "auditorium_wide": data_uri("assets/auditorium-wide.webp.b64", "image/webp"),
-    "ktv_selfie": data_uri("assets/ktv-selfie.webp.b64", "image/webp"),
     "social_chat": data_uri("assets/social-chat.webp.b64", "image/webp"),
     "ktv_video": data_uri("assets/ktv-memory.mp4.b64", "video/mp4"),
 }
@@ -54,7 +53,6 @@ for placeholder, value in {
     "__BOOK__": assets["book"],
     "__AUDITORIUM_CLOSE__": assets["auditorium_close"],
     "__AUDITORIUM_WIDE__": assets["auditorium_wide"],
-    "__KTV_SELFIE__": assets["ktv_selfie"],
     "__SOCIAL_CHAT__": assets["social_chat"],
     "__KTV_VIDEO__": assets["ktv_video"],
 }.items():
