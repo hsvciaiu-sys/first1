@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>宝宝，你完蛋了。</title>
+<style>__CSS__</style>
+</head>
+<body>
+<div id="app">
+  <div class="ambient a"></div><div class="ambient b"></div>
+  <header class="topbar">
+    <div class="brand">W × Z <b>/ 30 DAYS</b></div>
+    <nav class="chapter-nav" aria-label="故事进度"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></nav>
+    <div class="top-actions"><span id="chapterName">序 · 未读消息</span><button class="sound-toggle" id="soundBtn" onclick="toggleSound()" aria-label="声音开关">♪</button></div>
+  </header>
+
+  <section class="scene active" data-name="序 · 未读消息">
+    <div class="scene-inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">认识你的第 __DAYS__ 天 · 2026.08.01</div>
+        <h1><span>宝宝，</span><em>你完蛋了。</em></h1>
+        <p class="lead">有一个认识你三十天的人，欠你一段认真说完的话。</p>
+        <button class="primary" onclick="beginStory()">查看这条深夜消息 <span class="arrow">↗</span></button>
+        <div class="date-rule">建议戴上耳机 · 第一次点击会开启声音</div>
+      </div>
+      <div class="hero-visual">
+        <div class="days-stamp"><strong>30</strong><span>DAYS</span></div>
+        <figure class="book-frame"><img src="__BOOK__" alt="在火车上拿着《撒野》的照片"></figure>
+        <div class="quote-slip">“那些在深夜反复翻过的书页，终于变成了脚下走过的路。”<small>四平 → 鞍山 · 一小时，也是八年</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="01 · 深夜突击检查">
+    <div class="scene-inner test-grid">
+      <div>
+        <div class="eyebrow cool">01:49 · 深夜突击检查</div>
+        <h2>这几道题，<br>你应该很熟。</h2>
+        <p class="lead">请选择王尔波面对宝宝“反话文学”时的正确答案。提示：本测试没有陷阱，只有一个很粘人的老婆。</p>
+        <div class="choice-list">
+          <button class="choice" onclick="answerQuiz('在想你，宝宝。')">A. “你在干嘛？” → 在想你，宝宝</button>
+          <button class="choice" onclick="answerQuiz('嗯，只喜欢你一个。')">B. “你还喜欢我吗？” → 嗯，只喜欢你一个</button>
+          <button class="choice" onclick="answerQuiz('我的男朋友只有你一个，放心吧。')">C. “你完蛋了。” → 先抱一下，再听老婆判决</button>
+        </div>
+        <div class="verdict" id="verdict">判定结果：完全正确。<br>附加权限：可以继续想我、问我、粘着我。</div>
+        <button class="primary compact quiz-next" id="quizNext" onclick="go(2)">查看 7 月 5 日的答案 <span>→</span></button>
+      </div>
+      <div class="phone">
+        <div class="phone-head"><div class="contact"><span class="avatar">凡</span><div>周凡寓宝宝<div class="online">在线 · 正在想你</div></div></div><span class="micro">微信</span></div>
+        <div class="chat" id="nightChat"><div class="time">今天 01:49</div><div class="bubble">宝宝</div><div class="bubble">你在干嘛</div><div class="bubble">你还喜欢我吗</div><div class="bubble">你完蛋了</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="02 · 7月5日 01:49">
+    <div class="scene-inner confession-grid">
+      <div class="chat-window">
+        <div class="window-bar"><strong>凡寓吾爱</strong><div class="dots"><i></i><i></i><i></i></div></div>
+        <div class="confession-message cursor" id="confessionText" data-text="宝宝，我是真的喜欢你。我叫你宝宝，也叫你哥哥，你得对我负责吧。虽然我们才认识几天，但我一直觉得，时间不是衡量一段感情深浅的唯一标准。重要的是我见到你的时候，心里是确定的。你很好，你比我见过的很多人都要好。我不只想认识你，我想抓紧你。所以我今天算是半正式地提前问你一句，你愿意跟我在一起吗？"></div>
+        <div class="reply-wrap"><div class="reply-message" id="replyMessage">我愿意和你在一起。<br>不反悔的那一种。</div></div>
+      </div>
+      <div class="confession-aside">
+        <div class="big-date">07.05<small>THE DAY YOU ASKED</small></div>
+        <p class="lead" style="margin-top:30px">那天我只回了一句“我愿意”。是真的，但太短了。你给了我那么认真、那么长的一段话，所以认识你的第三十天，我想把没说完的部分补给你。</p>
+        <button class="primary dark" id="replyBtn" onclick="sendReply()">补上那句没说完整的愿意</button>
+        <button class="primary hidden-next" id="confessionNext" onclick="go(3)">后来，你把我带进了生活里 <span>→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="03 · 已进入他的生活">
+    <div class="scene-inner">
+      <div class="eyebrow">7月22日 / 7月31日</div>
+      <h2>屏幕里的名字，<br>开始有了真实的位置。</h2>
+      <div class="social-grid">
+        <div class="media-card"><span class="media-label">KTV MEMORY · 点击播放原声</span><video controls playsinline preload="metadata" poster="__KTV_SELFIE__"><source src="__KTV_VIDEO__" type="video/mp4"></video></div>
+        <div class="social-side">
+          <div class="photo-stack"><img src="__KTV_SELFIE__" alt="7月22日和朋友在KTV的合照"><img src="__SOCIAL_CHAT__" alt="7月31日介绍给朋友的聊天记录"></div>
+          <div class="social-note"><span class="badge">✓ 已进入他的生活</span><h3>“我跟他们介绍你。”</h3><p>我们还隔着屏幕，可你已经在一点点把我放进朋友、计划和真正的生活里。那一刻我第一次觉得，这不是一段只有我们知道的网恋。</p></div>
+        </div>
+      </div>
+      <div class="scene-footer"><button class="back" onclick="go(2)">← 回到 7 月 5 日</button><button class="primary compact" onclick="go(4)">去一趟他走了八年的路 <span>→</span></button></div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="04 · 四平到鞍山">
+    <div class="scene-inner anshan-layout">
+      <div class="route-panel">
+        <div class="eyebrow cool">《撒野》· 鞍山</div><h2>高铁一小时，<br>这条路走了八年。</h2>
+        <div class="route-line"><button class="stop on" onclick="routeStory(0,this)"><strong>四平</strong><span>出发</span></button><button class="stop" onclick="routeStory(1,this)"><strong>鞍山</strong><span>一小时</span></button><button class="stop" onclick="routeStory(2,this)"><strong>礼堂</strong><span>八年</span></button></div>
+        <div class="route-story" id="routeStory">八年前，你还是重庆课桌下偷偷看书的初中生。那时你大概没想过，有一天真的会坐上火车，去故事发生的地方。</div>
+        <p class="muted" style="line-height:1.8">你说，看到《撒野》会想哭，因为他们是最好的一家人。现在我好像明白了：被接住，不只是故事里的幸运；也是终于敢出发的自己，和愿意留在身边的人。</p>
+      </div>
+      <div class="anshan-gallery"><img class="wide" src="__AUDITORIUM_WIDE__" alt="鞍山旧礼堂全景"><img class="close" src="__AUDITORIUM_CLOSE__" alt="鞍山旧礼堂座椅"><img class="mini-book" src="__BOOK__" alt="《撒野》书籍照片"><div class="anshan-quote">“不是从一个城市到另一个城市。是从不敢，到敢。是从不知道，到知道。”</div></div>
+      <div class="scene-footer" style="grid-column:1/-1"><button class="back" onclick="go(3)">← 回到 KTV</button><button class="primary compact" onclick="go(5)">把想念变成一张票 <span>→</span></button></div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="05 · 两张会抵达的票">
+    <div class="scene-inner">
+      <div class="eyebrow">有些路，出发以后就会变近</div><h2>故事不是远方。<br>是可以抵达的日期。</h2>
+      <div class="tickets">
+        <article class="ticket"><div class="ticket-top"><span>G · 一小时</span><span>已经抵达</span></div><div class="ticket-route"><strong>四平</strong><i></i><strong>鞍山</strong></div><div class="ticket-meta"><div><span>旅客</span>周凡寓</div><div><span>行李</span>八年的勇气</div><div><span>状态</span>从不敢到敢</div></div><div class="ticket-stub">SA YE · ANSHAN</div></article>
+        <article class="ticket orange"><div class="ticket-top"><span>2026 · 08 · 14</span><span>等待见面</span></div><div class="ticket-route"><strong>无锡</strong><i></i><strong>重庆</strong></div><div class="ticket-meta"><div><span>约定</span>机场见</div><div><span>座位</span>靠近你一点</div><div><span>有效期</span>第一次见面</div></div><div class="ticket-stub">WUXI · CHONGQING</div></article>
+      </div>
+      <p class="route-message">不是谁欠谁一次奔赴。只是我们都在认真地，把“想你”变成一个会抵达的日期。</p>
+      <div class="countdown" id="countdown"><div><strong>--</strong><span>天</span></div><div><strong>--</strong><span>小时</span></div><div><strong>--</strong><span>分钟</span></div><div><strong>--</strong><span>秒</span></div></div>
+      <div class="scene-footer"><button class="back" onclick="go(4)">← 回到鞍山</button><button class="primary compact" onclick="go(6)">拆开我们的以后 <span>→</span></button></div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="06 · 我们约好的以后">
+    <div class="scene-inner">
+      <div class="future-head"><div><div class="eyebrow cool">点击拆开四个小约定</div><h2>三天很短，<br>但不会是仅有的三天。</h2></div><p class="lead">距离、学业和未来的计划也许会让我们偶尔不安。没关系，我们不急着一次走完，只把说过的小事一件件完成。</p></div>
+      <div class="promise-grid">
+        <article class="promise" data-num="01" tabindex="0" onclick="revealPromise(this)"><span class="icon">🥢</span><h3>去吃好吃的</h3><p>先不看答案 · 点击拆开</p><div class="reveal"><b>一起吃很多顿饭</b>把收藏夹里的店，一家一家认真吃掉。</div></article>
+        <article class="promise" data-num="02" tabindex="0" onclick="revealPromise(this)"><span class="icon">≈</span><h3>一起去看海</h3><p>先不看答案 · 点击拆开</p><div class="reveal"><b>去看一次没有时差的海</b>不隔着屏幕发照片，肩并肩吹同一阵风。</div></article>
+        <article class="promise" data-num="03" tabindex="0" onclick="revealPromise(this)"><span class="icon">✦</span><h3>一起去迪士尼</h3><p>先不看答案 · 点击拆开</p><div class="reveal"><b>排很久的队也会开心</b>因为转头就能看见宝宝在身边。</div></article>
+        <article class="promise" data-num="04" tabindex="0" onclick="revealPromise(this)"><span class="icon">⌂</span><h3>同一座城市</h3><p>先不看答案 · 点击拆开</p><div class="reveal"><b>未来的规划里有彼此</b>不把未来说满，但会认真一起计划下一座城市。</div></article>
+      </div>
+      <div class="three-days">我不能把 8 月 14 日到 17 日变得更长，但可以告诉你：以后还有四平、无锡、澳大利亚、马来西亚，也还有那座我们最终能一起生活的城市。</div>
+      <div class="scene-footer"><button class="back" onclick="go(5)">← 收好两张票</button><button class="primary compact" onclick="go(7)">打开最后一封信 <span>→</span></button></div>
+    </div>
+  </section>
+
+  <section class="scene" data-name="07 · 写给周凡寓">
+    <div class="scene-inner">
+      <div class="letter-intro" id="letterIntro"><div class="eyebrow">认识你的第三十天</div><h2>7月5日那句“我愿意”，<br>今天想说得完整一点。</h2><button class="envelope" onclick="openLetter()" aria-label="拆开写给周凡寓的信"><span class="envelope-body"></span><span class="envelope-flap"></span><span class="seal">WZ</span></button><p class="micro">点击拆信 · 这一页不需要你回答任何问题</p></div>
+      <article class="letter-pane" id="letterPane">
+        <div class="paper-head"><span>TO · 周凡寓宝宝</span><span>2026.08.01</span></div>
+        <div class="letter-copy">
+          <h3>周凡寓宝宝：</h3>
+          <p><b>你完蛋了。</b></p>
+          <p>因为你7月5日说过，我叫你宝宝，也叫你哥哥，所以我得对你负责。</p>
+          <p>那天你问我愿不愿意跟你在一起，我只回答了一句：“我愿意和你在一起。”</p>
+          <p>这句话是真的，但确实有点草率。你给了我那么认真、那么长的一段表白，我却还欠你一个同样认真的回答。所以今天，认识你的第三十天，我想把当时没说完的话补给你。</p>
+          <p class="pull">我喜欢你粘着我。喜欢你深夜突然发很多遍“想你”，喜欢你问我在干嘛，也喜欢你明明是想引起我的注意，却故意说“你完蛋了”。</p>
+          <p>我也喜欢你一次次问我：“你还喜欢我吗？”“你还爱我吗？”</p>
+          <p>我知道你不是想为难我。你只是想再确认一下，我是不是还在。</p>
+          <p>每次早上醒来，看到你在深夜发来的那些消息，我都不会觉得烦。相反，我会觉得很感动。因为有一个人这么认真地想我、需要我、等我的回应。原来被依赖，也是一件会让我幸福的事。</p>
+          <p>7月22日，你和朋友去KTV，把我带进了你们的视频里。</p>
+          <p>7月31日，你又告诉我：“我跟他们介绍你。”</p>
+          <p>我们明明还是隔着屏幕，可你已经在一点点把我放进你的生活。你让我觉得，我不是手机里的一个名字，也不是一段只有我们知道的网恋。我正在进入你的朋友、你的计划，也正在进入你真正的生活。</p>
+          <p>你问过我的职业规划，因为你想以后和我生活在同一个城市。</p>
+          <p>你说你可以来找我。</p>
+          <p>宝宝，你可能不知道，这句话对我来说有多重要。因为以前的我，没有被谁这样奔赴过。有人愿意为了见我改变路线、考虑城市、认真规划以后，这些事我都会记得。</p>
+          <p>我也终于明白，你为什么看到《撒野》会想哭，为什么你说他们是最好的一家人。</p>
+          <p>八年前，你还在重庆的课桌下面偷偷看那本书。八年以后，你从四平坐上火车，去了鞍山，去了24中，也站在了那个礼堂里。</p>
+          <p>你说，那些在深夜反复翻过的书页，终于变成了脚下走过的路。</p>
+          <p>你还说，鞍山并不远，高铁只有一个小时，可是这条路，你走了八年。</p>
+          <p>宝宝，8月14日，我们会在重庆机场第一次真正见到彼此。</p>
+          <p>我不是为了完成一项计划才去重庆，也不是为了让这段关系看起来更浪漫。我去，是因为我真的想见你。我想看看不在屏幕里的你，想听你当面叫我宝宝，也想真正抱到那个每天在深夜说想我的人。</p>
+          <p>你总说三天太短。</p><p>三天当然很短，我也舍不得。</p>
+          <p>我没有办法把8月14日到17日变得更长，但我可以告诉你：这不会是我们仅有的三天。</p>
+          <p>我们还约好了去吃很多好吃的，去看海，去迪士尼。以后还有四平、无锡、澳大利亚、马来西亚，还有那座我们最终能够一起生活的城市。</p>
+          <p>这些事情不会一下子全部实现。距离、学业和未来的计划，也可能让我们不安。</p>
+          <p>但我能向你保证，我不会因为你需要确认，就觉得你麻烦；不会因为你粘着我，就想把你推开。你问我还爱不爱你，我会认真回答。你情绪不好，我们就把话说出来。遇到问题的时候，我不会轻易丢下你。</p>
+          <p>你说时间不是衡量感情深浅的唯一标准，重要的是见到一个人的时候，心里是确定的。</p>
+          <p>现在，认识你的第三十天，我也很确定。</p>
+          <p>我喜欢你，喜欢你对我的依赖，也喜欢你把我写进未来的认真。</p>
+          <p>你说我得对你负责。</p><p>好，我答应你。</p><p><b>我愿意认真爱你，也愿意和你不离不弃。</b></p>
+          <p class="pull">今天我不想再问你一个需要回答的问题。<br><br>我只是想把7月5日那句“我愿意”，说得更完整一点。</p>
+          <p>7月5日，你问我愿不愿意。那天我的答案是愿意。今天，还是愿意。</p>
+          <p>以后如果你又在深夜问我：“你还喜欢我吗？”那就回来看看这一页。</p>
+          <div class="answer">答案一直留在这里：<b>喜欢。</b></div>
+          <p>你可以问很多次，我也愿意回答很多次。</p>
+          <p>宝宝，谢谢你和我在人海中相遇，也谢谢你让我知道，原来被人想念、被人需要、被人一点点放进生活里，是这样的感觉。</p>
+          <p>认识你的第三十天，我最想说的其实很简单：</p>
+          <p><b>我很庆幸，那天我们开始说话了。</b></p><p><b>也很开心，现在陪在我身边的人是你。</b></p>
+          <div class="signature">—— 王尔波<br>2026年8月1日</div>
+          <div style="text-align:center;margin-top:36px"><button class="primary dark" onclick="receiveLetter()">宝宝，我收到啦</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="scene" data-name="尾声 · 抱抱已预约">
+    <div class="scene-inner receipt-wrap">
+      <div class="eyebrow cool">RECEIPT · NO. 20260814</div><h2>抱抱已预约成功。</h2>
+      <article class="receipt"><div class="receipt-title"><strong>见面确认单</strong><span>W × Z / 30 DAYS</span></div><div class="receipt-row"><span>预约对象</span><b>周凡寓宝宝 × 王尔波宝宝</b></div><div class="receipt-row"><span>地点</span><b>重庆机场</b></div><div class="receipt-row"><span>时间</span><b>2026 年 8 月 14 日</b></div><div class="receipt-row"><span>附加项目</span><b>当面叫宝宝 / 好好抱一下 / 不许躲</b></div><div class="receipt-total"><span>需要支付</span><b>一个真的抱抱</b></div></article>
+      <p class="return-note">如果以后你又想问“你还喜欢我吗”，就回来看看。<br>这一页会一直回答你：喜欢。</p><button class="ghost" onclick="go(0)">从头再看一次 ↻</button>
+    </div>
+  </section>
+  <div class="toast" id="toast"></div>
+</div>
+<script>__JS__</script>
+</body>
+</html>
